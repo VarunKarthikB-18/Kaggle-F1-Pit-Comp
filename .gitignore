@@ -1,0 +1,12 @@
+# Ignore large dataset files
+train.csv
+test.csv
+
+# Ignore large submission CSVs
+*.csv
+
+# Ignore scratch files and vscode configurations
+scratch/
+.vscode/
+__pycache__/
+*.pyc
