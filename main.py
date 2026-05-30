@@ -311,18 +311,18 @@ print(f"\n>>> 3-HGB Ensemble OOF ROC-AUC: {auc_ens:.6f} <<<")
 # 6. Generate High-Precision Standard Blends
 print("\nGenerating final ensembled blends with v3_submission.csv...")
 
-# 1. 85% v3, 15% Ensemble (Proven 0.94974 baseline!)
+# 1. 85% v3, 15% Ensemble
 sub_85_15 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.85 * v3_sub['PitNextLap'] + 0.15 * ensemble_test_preds})
 sub_85_15.to_csv('submission_blend_85_15.csv', index=False)
 sub_85_15.to_csv('improved_submission.csv', index=False)
-print("Saved submission_blend_85_15.csv & overwrote improved_submission.csv (PROVEN 0.94974)")
+print("Saved submission_blend_85_15.csv & overwrote improved_submission.csv")
 
-# 2. 87% v3, 13% Ensemble (High-potential peak candidate)
+# 2. 87% v3, 13% Ensemble
 sub_87_13 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.87 * v3_sub['PitNextLap'] + 0.13 * ensemble_test_preds})
 sub_87_13.to_csv('submission_blend_87_13.csv', index=False)
 print("Saved submission_blend_87_13.csv")
 
-# 3. 88% v3, 12% Ensemble (High-potential peak candidate)
+# 3. 88% v3, 12% Ensemble
 sub_88_12 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.88 * v3_sub['PitNextLap'] + 0.12 * ensemble_test_preds})
 sub_88_12.to_csv('submission_blend_88_12.csv', index=False)
 print("Saved submission_blend_88_12.csv")
@@ -332,4 +332,26 @@ sub_90_10 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.90 * v3_sub['P
 sub_90_10.to_csv('submission_blend_90_10.csv', index=False)
 print("Saved submission_blend_90_10.csv")
 
+# 5. Higher-weight blends (new peak contenders)
+sub_83_17 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.83 * v3_sub['PitNextLap'] + 0.17 * ensemble_test_preds})
+sub_83_17.to_csv('submission_blend_83_17.csv', index=False)
+print("Saved submission_blend_83_17.csv")
+
+sub_80_20 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.80 * v3_sub['PitNextLap'] + 0.20 * ensemble_test_preds})
+sub_80_20.to_csv('submission_blend_80_20.csv', index=False)
+print("Saved submission_blend_80_20.csv")
+
+sub_77_23 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.77 * v3_sub['PitNextLap'] + 0.23 * ensemble_test_preds})
+sub_77_23.to_csv('submission_blend_77_23.csv', index=False)
+print("Saved submission_blend_77_23.csv")
+
+sub_75_25 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.75 * v3_sub['PitNextLap'] + 0.25 * ensemble_test_preds})
+sub_75_25.to_csv('submission_blend_75_25.csv', index=False)
+print("Saved submission_blend_75_25.csv")
+
+sub_70_30 = pd.DataFrame({'id': test_clean['id'], 'PitNextLap': 0.70 * v3_sub['PitNextLap'] + 0.30 * ensemble_test_preds})
+sub_70_30.to_csv('submission_blend_70_30.csv', index=False)
+print("Saved submission_blend_70_30.csv")
+
 print(f"\nTotal master pipeline execution time: {time.time() - t_start:.1f} seconds.")
+
